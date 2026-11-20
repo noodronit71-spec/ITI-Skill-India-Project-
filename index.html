@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Places Of Gujarat </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --saffron: #e85d04;
+            --saffron-dark: #c2410c;
+            --peacock: #0f4c5c;
+            --peacock-deep: #092e38;
+            --gold: #f4a261;
+            --gold-bright: #ffb703;
+            --sand: #fdf8f0;
+            --sand-card: #fffdf9;
+            --ink: #1e293b;
+            --muted: #57534e;
+            --border: #eadbc8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: var(--sand);
+            background-image:
+                radial-gradient(circle at 12% 8%, rgba(232, 93, 4, 0.08) 0%, transparent 32%),
+                radial-gradient(circle at 88% 18%, rgba(15, 76, 92, 0.09) 0%, transparent 35%),
+                radial-gradient(circle at 50% 85%, rgba(244, 162, 97, 0.1) 0%, transparent 40%);
+            color: var(--ink);
+        }
+
+        /* Decorative Kutch-inspired geometric top strip */
+        .heritage-strip {
+            height: 8px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--saffron) 0px,
+                var(--saffron) 18px,
+                var(--gold-bright) 18px,
+                var(--gold-bright) 30px,
+                var(--peacock) 30px,
+                var(--peacock) 48px,
+                #d62828 48px,
+                #d62828 60px
+            );
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--peacock-deep) 0%, var(--peacock) 55%, #186f85 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 3rem 1.5rem 3.5rem;
+            position: relative;
+            border-bottom: 4px solid var(--gold-bright);
+            box-shadow: 0 10px 25px rgba(9, 46, 56, 0.22);
+        }
+
+        .tagline {
+            display: inline-block;
+            background: rgba(255, 183, 3, 0.18);
+            border: 1.5px solid rgba(255, 183, 3, 0.68);
+            color: var(--gold-bright);
+            font-size: clamp(1rem, 2.2vw, 1.3rem);
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            line-height: 1.35;
+            text-transform: uppercase;
+            max-width: 94%;
+            padding: 0.72rem 2rem;
+            border-radius: 999px;
+            margin-bottom: 0.9rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Cinzel Decorative', Georgia, serif;
+            font-size: clamp(1.9rem, 4.5vw, 3.1rem);
+            letter-spacing: 0.03em;
+            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        header p.subtitle {
+            max-width: 720px;
+            margin: 0.75rem auto 0;
+            color: #e2f1f5;
+            font-size: 1.02rem;
+        }
+
+        /* Full-screen-fit container border */
+        main {
+            width: calc(100% - 3rem);
+            max-width: none;
+            margin: -1.8rem 1.5rem 2.5rem;
+            padding: 2.25rem 2.5rem;
+            background: var(--sand-card);
+            border: 2px solid var(--border);
+            border-radius: 18px;
+            box-shadow: 0 14px 35px rgba(15, 76, 92, 0.08);
+            position: relative;
+            z-index: 2;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-family: 'Cinzel Decorative', Georgia, serif;
+            color: var(--peacock);
+            font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+            margin-top: 0;
+            margin-bottom: 1.1rem;
+            padding-bottom: 0.55rem;
+            border-bottom: 2px solid var(--border);
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        h2::before {
+            content: "✦";
+            color: var(--saffron);
+            font-size: 1.15rem;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 84px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--saffron), var(--gold-bright));
+            border-radius: 2px;
+        }
+
+        .intro-box {
+            background: linear-gradient(120deg, #fff8ed 0%, #f3f9fb 100%);
+            border-left: 4px solid var(--saffron);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .intro-box p {
+            margin: 0;
+            font-size: 1.05rem;
+            color: var(--ink);
+        }
+
+        ul.places-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        ul.places-list li {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--peacock);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            font-size: 1.02rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+            cursor: pointer;
+            transition: transform 0.2s ease 0s, box-shadow 0.22s ease 0.04s, border-left-color 0.22s ease 0.08s, background-color 0.22s ease 0.08s;
+        }
+
+        .place-copy {
+            width: 100%;
+        }
+
+        /* Sequenced hover effect: 1. Card shift & accent -> 2. Full-width photo frame opens below -> 3. Label reveals */
+        ul.places-list li:hover,
+        ul.places-list li:focus-within {
+            transform: translateX(6px);
+            border-left-color: var(--saffron);
+            background-color: #fffcf7;
+            box-shadow: 0 10px 24px rgba(232, 93, 4, 0.14);
+        }
+
+        ul.places-list li.selected-place {
+            border-left-color: var(--saffron);
+            background: #fffaf3;
+        }
+
+        ul.places-list li strong {
+            color: var(--saffron-dark);
+            font-size: 1.06rem;
+            transition: color 0.2s ease 0.08s;
+        }
+
+        ul.places-list li:hover strong {
+            color: var(--peacock);
+        }
+
+        .hover-photo-box {
+            width: 100%;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+            background: #f8f2e8;
+            box-shadow: 0 10px 22px rgba(15, 76, 92, 0.16);
+            opacity: 0;
+            transform: translateY(10px) scale(0.99);
+            max-height: 0;
+            margin-top: 0;
+            transition: max-height 0.36s ease 0.1s, margin-top 0.28s ease 0.1s, opacity 0.26s ease 0.14s, transform 0.3s ease 0.14s, border-color 0.24s ease 0.14s;
+        }
+
+        ul.places-list li:hover .hover-photo-box,
+        ul.places-list li:focus-within .hover-photo-box {
+            max-height: 620px;
+            margin-top: 0.9rem;
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            border-color: var(--saffron);
+        }
+
+        .hover-photo-box img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 520px;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+
+        .hover-photo-tag {
+            display: block;
+            padding: 0.55rem 0.9rem;
+            font-size: 0.92rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--peacock);
+            background: linear-gradient(to bottom, #fffdf9, #fdf3e3);
+            border-top: 2px solid var(--gold);
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity 0.22s ease 0.24s, transform 0.24s ease 0.24s;
+        }
+
+        ul.places-list li:hover .hover-photo-tag,
+        ul.places-list li:focus-within .hover-photo-tag {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+            border: 1px dashed var(--saffron);
+            border-radius: 14px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .cta-box p {
+            margin: 0;
+            color: var(--ink);
+        }
+
+        .cta-link {
+            display: inline-block;
+            margin-top: 1.1rem;
+            padding: 0.85rem 1.6rem;
+            background: linear-gradient(135deg, var(--saffron) 0%, #f77f00 100%);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            border-radius: 999px;
+            box-shadow: 0 6px 16px rgba(232, 93, 4, 0.28);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+        }
+
+        .cta-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(232, 93, 4, 0.36);
+            filter: brightness(1.04);
+        }
+
+        footer {
+            background: linear-gradient(180deg, var(--peacock-deep) 0%, #051c22 100%);
+            color: #e2e8f0;
+            text-align: center;
+            padding: 2.5rem 1.25rem;
+            margin-top: 2rem;
+            font-size: 0.96rem;
+            border-top: 4px solid var(--saffron);
+        }
+
+        footer p {
+            margin: 0.45rem 0;
+        }
+
+        footer strong {
+            color: var(--gold-bright);
+            font-size: 1.08rem;
+            letter-spacing: 0.02em;
+        }
+
+        footer a {
+            color: var(--gold-bright);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 1rem !important;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 720px) {
+            ul.places-list li:hover .hover-photo-box,
+            ul.places-list li:focus-within .hover-photo-box {
+                max-height: 420px;
+            }
+            .hover-photo-box img {
+                max-height: 340px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .tagline {
+                padding: 0.65rem 1.35rem;
+                letter-spacing: 0.12em;
+            }
+            main {
+                width: calc(100% - 1.2rem);
+                margin: -1.2rem 0.6rem 2rem;
+                padding: 1.35rem 1.1rem;
+                border-radius: 14px;
+            }
+            ul.places-list li:hover .hover-photo-box,
+            ul.places-list li:focus-within .hover-photo-box {
+                max-height: 340px;
+            }
+            .hover-photo-box img {
+                max-height: 260px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heritage-strip" aria-hidden="true"></div>
+
+    <!-- Heading -->
+    <header>
+        <span class="tagline">Khushboo Gujarat Ki</span>
+        <p class="subtitle">Monuments, White Salt Deserts, Sacred Shrines, And Wild Habitats Across Western India</p>
+    </header>
+
+    <main>
+        <!-- Paragraph -->
+        <section>
+            <h2>Discover Vibrant Gujarat</h2>
+            <div class="intro-box">
+                <p>
+                    Gujarat, Located On The Western Coast Of India, Is A Land Of Rich Cultural Heritage, 
+                    Ancient Architecture, Sacred Temples, Diverse Wildlife, And Breathtaking Natural Landscapes. 
+                    From Vast White Salt Deserts And Royal Palaces To The World's Tallest Statue And The Last 
+                    Natural Habitat Of The Asiatic Lion, Gujarat Offers Unforgettable Experiences For Every Traveler.
+                </p>
+            </div>
+        </section>
+
+        <!-- List of Five Tourist Places -->
+        <section>
+            <h2>Top 5 Tourist Destinations</h2>
+            <ul class="places-list">
+                <li data-place="statue" tabindex="0">
+                    <div class="place-copy">
+                        <strong>Statue of Unity (Kevadia):</strong> Standing at 182 Meters, This Monumental Tribute To Sardar Vallabhbhai Patel Is The World's Tallest Statue, Surrounded By Gardens, Museums, And Narmada River Views.
+                    </div>
+                    <span class="hover-photo-box" aria-hidden="true">
+                        <img src="https://im.whatshot.in/img/2019/Aug/shutterstock-1227620422-cropped-1566539611.jpg" alt="Statue of Unity in Kevadia">
+                        <span class="hover-photo-tag">Statue of Unity</span>
+                    </span>
+                </li>
+                <li data-place="somnath" tabindex="0">
+                    <div class="place-copy">
+                        <strong>Somnath Temple (Veraval):</strong> One Of The Twelve Sacred Jyotirlinga Shrines Of Lord Shiva, Perched Dramatically Along The Arabian Sea Coast.
+                    </div>
+                    <span class="hover-photo-box" aria-hidden="true">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Somanath_Temple.jpg" alt="Somnath Temple">
+                        <span class="hover-photo-tag">Somnath Temple</span>
+                    </span>
+                </li>
+                <li data-place="rann" tabindex="0">
+                    <div class="place-copy">
+                        <strong>Great Rann of Kutch:</strong> A Mesmerizing Expanse Of White Salt Desert Famous For Its Moonlit Beauty And The Vibrant Annual Rann Utsav Cultural Festival.
+                    </div>
+                    <span class="hover-photo-box" aria-hidden="true">
+                        <img src="https://compassndiaries.wordpress.com/wp-content/uploads/2022/02/dsc2339-01w.jpeg" alt="Great Rann of Kutch">
+                        <span class="hover-photo-tag">Great Rann of Kutch</span>
+                    </span>
+                </li>
+                <li data-place="raniKiVav" tabindex="0">
+                    <div class="place-copy">
+                        <strong>Rani ki Vav (Patan):</strong> An Intricately Sculpted 11th-Century Stepwell And UNESCO World Heritage Site Showcasing Remarkable Solanki-Era Craftsmanship.
+                    </div>
+                    <span class="hover-photo-box" aria-hidden="true">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Rani_ki_vav%2C_Patan.jpg/1280px-Rani_ki_vav%2C_Patan.jpg" alt="Rani ki Vav in Patan">
+                        <span class="hover-photo-tag">Rani ki Vav</span>
+                    </span>
+                </li>
+                <li data-place="gir" tabindex="0">
+                    <div class="place-copy">
+                        <strong>Gir National Park (Sasan Gir):</strong> The Only Natural Habitat In The World Where Visitors Can Spot Majestic Asiatic Lions In The Wild.
+                    </div>
+                    <span class="hover-photo-box" aria-hidden="true">
+                        <img src="https://www.activenoon.com/wp-content/uploads/2024/04/Gir-Wildlife-Sanctuary-Gujarat-1600x900.jpg" alt="Gir National Park">
+                        <span class="hover-photo-tag">Gir National Park</span>
+                    </span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Hyperlink to Gujarat Tourism Website -->
+        <section>
+            <h2>For More Information</h2>
+            <div class="cta-box">
+                                <a href="https://www.gujarattourism.com/" target="_blank" rel="noopener noreferrer" class="cta-link">
+                    Visit Official Gujarat Tourism Website
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer with Contact Details -->
+    <footer>
+        <p><strong>INDUSTRAIL TRANING INSTITUTE (ITI)</strong></p>
+        <p>Antaliya Chikhli Road, Opp. V. S. Patel College, Bilimora, Navsari, Gujarat – 396321</p>
+        <p>
+            Toll-Free Helpline: <a href="tel:02634-284652">02634-284652</a> | 
+            Email: <a href="mailto:iti-bilimora-nav@gujarat.gov.in">iti-bilimora-nav@gujarat.gov.in</a>
+        </p>
+        <p class="copyright">&copy; This Blog Is Only For Fair Use. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const items = document.querySelectorAll('.places-list li');
+
+        items.forEach((item) => {
+            item.addEventListener('click', () => {
+                const alreadySelected = item.classList.contains('selected-place');
+                items.forEach((el) => el.classList.remove('selected-place'));
+                if (!alreadySelected) {
+                    item.classList.add('selected-place');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
